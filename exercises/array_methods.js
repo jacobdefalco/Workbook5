@@ -9,6 +9,7 @@ let cart = [
   { item: "Apples", price: 0.66, quantity: 6 },
 ];
 
+console.log("=====Exercise 1=====");
 const cartItemNames = cart.map(function (cartItem) {
   return cartItem.item;
 });
@@ -17,3 +18,13 @@ function displayCartItem(name) {
   console.log(name);
 }
 cartItemNames.forEach(displayCartItem);
+console.log("=====Exercise 2=====");
+console.log("====items sorted====");
+
+cartItemNames.sort();
+
+function displaycart(names) {
+  console.log(names);
+}
+
+cartItemNames.forEach(displaycart);
