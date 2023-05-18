@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+    <style>
+      .roundedImg {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div id="first-image">
+        <img src="https://placewaifu.com/image/200?greyscale" />
+        <p>First Waifu</p>
+      </div>
+      <div id="second-image">
+        <img src="https://placekitten.com/g/200/200" />
+        <p>KITTEN</p>
+      </div>
+      <div id="third-image">
+        <img src="https://placebear.com/g/200/200" />
+        <p>DAAAA bears</p>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script>
+      // grab all paragraphs
+      const paragraphs = document.querySelectorAll("p");
+      //add border to all paragraph
+      paragraphs.forEach((p) => (p.style.border = "1px solid white"));
+      //grab images
+      const images = document.querySelectorAll("img");
+      images.forEach((i) => i.classList.add("roundedImg"));
+    </script>
+  </body>
+</html>
