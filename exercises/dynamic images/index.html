@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Images</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <label for="image-list">Images</label>
+      <select name="images" id="image-list">
+        <option value="">Please Select Image...</option>
+      </select>
+      <button id="load-button" onclick="loadChoices()">Load Choices</button>
+      <button id="display-button" onclick="displayImages()">
+        Display Selection
+      </button>
+      <button id="clear-button" onclick="clearImages()">
+        Clear All Images
+      </button>
+      <div id="image-div"></div>
+    </main>
+    <footer></footer>
+    <script>
+      "use strict";
+      const data = [
+        { name: "Dog", src: "images/dog.jpg" },
+        { name: "Cat", src: "images/cat.jpg" },
+        { name: "Lion", src: "images/lion.jpg" },
+        { name: "Parrot", src: "images/parrot.jpg" },
+        { name: "Potatoes", src: "images/potatoes.jpg" },
+      ];
+
+      const selection = document.querySelector("#image-list");
+      const displayButton = document.querySelector("#display-button");
+      const clearButton = document.querySelector("#clear-button");
+      const imageDiv = document.querySelector("#image-div");
+
+      function loadChoices() {
+        data.forEach((imgData) => {
+          let imageChoice = new Option(imgData.name, imgData.src);
+          selection.appendChild(imageChoice);
+        });
+      }
+
+      function displayImages() {
+        let imageElement = document.createElement("img");
+        let imgSrc = selection.value;
+        if (!imgSrc) {
+          return;
+        }
+        imageElement.src = imgSrc;
+        imageDiv.appendChild(imageElement);
+      }
+      function clearImages() {
+        imageDiv.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
