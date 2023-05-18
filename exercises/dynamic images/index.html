@@ -47,6 +47,7 @@
       const selectImageOption = document.querySelector(
         "#select-image-option"
       ).value;
+      const loadButton = document.querySelector("#load-button");
       const displayButton = document.querySelector("#display-button");
       const clearButton = document.querySelector("#clear-button");
       const imageDiv = document.querySelector("#image-div");
@@ -56,6 +57,8 @@
           let imageChoice = new Option(imgData.name, imgData.src);
           selection.appendChild(imageChoice);
         });
+        loadButton.disabled = true;
+        loadButton.innerText = "Load Choices(Disabled)";
       }
       function displayImages() {
         let imageElement = document.createElement("img");
@@ -69,6 +72,11 @@
       function clearImages() {
         imageDiv.innerHTML = "";
         selection.value = selectImageOption;
+        selection.innerHTML = "";
+        let defaultOption = new Option("Please Select Image...");
+        selection.appendChild(defaultOption);
+        loadButton.disabled = false;
+        loadButton.innerText = "Load Choices";
       }
     </script>
   </body>
