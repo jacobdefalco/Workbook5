@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventures Exercise</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <form action="categories">
+        <label for="categories-ddl"><b>Categories</b></label>
+        <select name="" id="categories-ddl">
+          <option value="">Please Select One...</option>
+        </select>
+        <button type="button" id="load-button" onclick="loadChoices()">
+          Load Categories
+        </button>
+        <button type="button" id="display-button" onclick="filterAndDisplay()">
+          Display Matching Activities
+        </button>
+        <button type="button" id="clear-button" onclick="clearTableBody()">
+          Clear Activities
+        </button>
+      </form>
+      <table id="matching-activities">
+        <thead>
+          <tr>
+            <b>Activities</b>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody id="matching-activities-tbl-body"></tbody>
+      </table>
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+  </body>
+</html>
