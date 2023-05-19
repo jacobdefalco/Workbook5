@@ -14,7 +14,7 @@
     <header></header>
     <main>
       <h3>Outstanding Winning Lottery Tickets</h3>
-      <table id="winningTicketsTbl">
+      <table id="winning-tickets-tbl">
         <thead>
           <tr>
             <th>Ticket Number</th>
@@ -22,7 +22,7 @@
             <th>Expires</th>
           </tr>
         </thead>
-        <tbody id="winningTicketsTblBody"></tbody>
+        <tbody id="winning-tickets-tbl-body"></tbody>
       </table>
     </main>
     <footer></footer>
@@ -41,7 +41,12 @@
         { tixNum: "8751426", expires: "2020-09-15", prize: 100000 },
       ];
 
-      function loadWinningTicketsTable() {}
+      function loadWinningTicketsTable() {
+        const ticketsTblBody = document.querySelector(
+          "#winning-tickets-tbl-body"
+        );
+        console.log(ticketsTblBody);
+      }
     </script>
   </body>
 </html>
