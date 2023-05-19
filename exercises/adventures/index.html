@@ -15,14 +15,11 @@
     <main>
       <form action="categories">
         <label for="categories-ddl"><b>Categories</b></label>
-        <select name="" id="categories-ddl">
+        <select name="" id="categories-ddl" onchange="filterAndDisplay()">
           <option value="">Please Select One...</option>
         </select>
         <button type="button" id="load-button" onclick="loadChoices()">
           Load Categories
-        </button>
-        <button type="button" id="display-button" onclick="filterAndDisplay()">
-          Display Matching Activities
         </button>
         <button type="button" id="clear-button" onclick="clearTableBody()">
           Clear Activities
@@ -35,6 +32,7 @@
           </tr>
           <tr>
             <th>Name</th>
+            <th>Description</th>
             <th>Price</th>
             <th>Location</th>
             <th>ID</th>
