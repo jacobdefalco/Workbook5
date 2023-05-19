@@ -40,12 +40,28 @@
         { tixNum: "7778172", expires: "2023-01-15", prize: 5000000 },
         { tixNum: "8751426", expires: "2020-09-15", prize: 100000 },
       ];
+      //create a table row with the data being put into each cell
+      function buildTicketRow(tbody, theTicket) {
+        let row = tbody.insertRow(-1);
 
+        let cell1 = row.insertCell(0);
+        cell1.innerText = theTicket.tixNum;
+
+        let cell2 = row.insertCell(1);
+        cell2.innerText = "$" + theTicket.prize.toFixed(2);
+
+        let cell3 = row.insertCell(2);
+        cell3.innerText = theTicket.expires;
+      }
+      //loop through array and call the function for every object within the array
       function loadWinningTicketsTable() {
         const ticketsTblBody = document.querySelector(
           "#winning-tickets-tbl-body"
         );
-        console.log(ticketsTblBody);
+
+        for (let i = 0; i < winningTickets.length; i++) {
+          buildTicketRow(ticketsTblBody, winningTickets[i]);
+        }
       }
     </script>
   </body>
